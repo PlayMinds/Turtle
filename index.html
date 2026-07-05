@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle, check what the world is doing!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- Column 1: Left Navigation Sidebar -->
+        <aside class="left-sidebar">
+            <div class="sidebar-sticky-wrapper">
+                <a href="#" class="logo-link">
+                    <span class="brand-logo">Turtle</span>
+                </a>
+                <nav class="nav-menu">
+                    <a href="#" class="nav-item active">Home</a>
+                    <a href="#" class="nav-item">Explore</a>
+                    <a href="#" class="nav-item">Notifications</a>
+                    <a href="#" class="nav-item">Messages</a>
+                    <a href="#" class="nav-item">Bookmarks</a>
+                    <a href="#" class="nav-item">Profile</a>
+                    <!-- Hidden by default, toggled via JavaScript on authentication -->
+                    <a href="#" id="logout-nav-item" class="nav-item hidden" style="color: #ff4444;">Logout</a>
+                </nav>
+                <button class="x-post-btn">Post</button>
+            </div>
+        </aside>
+
+        <!-- Column 2: Central Timeline Feed -->
+        <main class="main-timeline">
+            <!-- Top Sticky Tab Navigation -->
+            <header class="timeline-header">
+                <div class="header-title">Home</div>
+                <div class="feed-tabs">
+                    <div class="feed-tab active"><span>For you</span></div>
+                    <div class="feed-tab"><span>Following</span></div>
+                </div>
+            </header>
+
+            <!-- Creation Box Structure -->
+            <section class="compose-box">
+                <div class="avatar-column">
+                    <div id="user-avatar-container">
+                        <div class="user-avatar-placeholder"></div>
+                    </div>
+                </div>
+                <div class="form-column">
+                    <!-- Login Button Overlay (Hidden when logged in) -->
+                    <div id="login-overlay" class="login-prompt">
+                        <p>Join the community to start posting updates.</p>
+                        <button id="discord-login-btn" class="pms-button discord-theme-btn">Login with Discord</button>
+                    </div>
+
+                    <!-- The Posting Form (Hidden until logged in) -->
+                    <form id="turtle-form" class="hidden">
+                        <textarea id="turtle-textarea" placeholder="What is happening?!" maxlength="280" required></textarea>
+                        <div class="compose-footer">
+                            <span class="char-count" id="char-counter">280 characters remaining</span>
+                            <button type="submit" class="pms-button">Post</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Dynamic Post Container Feed -->
+            <section class="post-feed" id="timeline-feed">
+                <!-- Javascript will inject data blocks directly into this space -->
+            </section>
+        </main>
+
+        <!-- Column 3: Right Sidebar Panel -->
+        <aside class="right-sidebar">
+            <div class="sidebar-search-box">
+                <input type="text" placeholder="Search" class="search-input">
+            </div>
+            
+            <div class="trending-card">
+                <h2>What's happening</h2>
+                <div class="trend-item">
+                    <span class="trend-meta">Trending in Tech</span>
+                    <p class="trend-title">#OrangeFoundation</p>
+                    <span class="trend-meta">10.5K Posts</span>
+                </div>
+                <div class="trend-item">
+                    <span class="trend-meta">Open Source · Trending</span>
+                    <p class="trend-title">Turtle App</p>
+                    <span class="trend-meta">4,213 Posts</span>
+                </div>
+                <div class="trend-item">
+                    <span class="trend-meta">Trending Worldwide</span>
+                    <p class="trend-title">#WebDev</p>
+                    <span class="trend-meta">85.1K Posts</span>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Link the JavaScript engine file -->
+    <script src="app.js"></script>
+</body>
+</html>
